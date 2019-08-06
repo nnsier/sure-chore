@@ -1,11 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Character from './components/Character/index';
 
 function App() {
+
+  const [model, setModel] = useState(false)
+
+  const displayModel = (event) => (
+    event.preventDefault()
+  ) 
+
+
   return (
     <div className="App">
-      Don't learn React. Learn server-side shit.
+      { model ? <Character/> : null }
+      <button onClick={() => setModel(!model)}>Model </button> 
     </div>
   );
 }
